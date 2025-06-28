@@ -135,4 +135,101 @@ b546abc (HEAD -> master, feat-c) added link tag
 3f86b1e (feat-b) added feature b html file
 98bea4a working on feat a
 
+PS C:\Users\JOLLY\git_branch> git checkout -b feat-d
+Switched to a new branch 'feat-d'
+PS C:\Users\JOLLY\git_branch> git add .
+PS C:\Users\JOLLY\git_branch> git commit -m "commit-1"
+[feat-d 1cbb338] commit-1
+ 2 files changed, 138 insertions(+)
+ create mode 100644 commands.txt
+ create mode 100644 feat-d.html
+PS C:\Users\JOLLY\git_branch> git commit -am "commit-2"
+[feat-d 9f6a7ce] commit-2
+ 1 file changed, 11 insertions(+)
+PS C:\Users\JOLLY\git_branch> git commit -am "commit-3"
+[feat-d 48d6619] commit-3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\JOLLY\git_branch> git commit -am "commit-4"
+[feat-d 4ba2df8] commit-4
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+PS C:\Users\JOLLY\git_branch> git log --oneline
+4ba2df8 (HEAD -> feat-d) commit-4
+48d6619 commit-3
+9f6a7ce commit-2
+1cbb338 commit-1
+b546abc (master, feat-c) added link tag
+81c745f added paragraph in feat c
+98c9a54 started working feat c
+3f86b1e (feat-b) added feature b html file
+98bea4a working on feat a
+PS C:\Users\JOLLY\git_branch> git checkout master
+Switched to branch 'master'
+
+PS C:\Users\JOLLY\git_branch> git merge --squash feat-d
+Updating b546abc..4ba2df8
+Fast-forward
+Squash commit -- not updating HEAD
+ commands.txt | 138 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ feat-d.html  |  11 +++++
+ 2 files changed, 149 insertions(+)
+ create mode 100644 commands.txt
+ create mode 100644 feat-d.html
+
+PS C:\Users\JOLLY\git_branch> git log --oneline
+b546abc (HEAD -> master, feat-c) added link tag
+81c745f added paragraph in feat c
+98c9a54 started working feat c
+3f86b1e (feat-b) added feature b html file
+98bea4a working on feat a
+
+PS C:\Users\JOLLY\git_branch> git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   commands.txt
+        new file:   feat-d.html
+
+PS C:\Users\JOLLY\git_branch> git add .
+PS C:\Users\JOLLY\git_branch> git commit -m "this is feat-d"
+[master 857e127] this is feat-d
+ 2 files changed, 149 insertions(+)
+ create mode 100644 commands.txt
+ create mode 100644 feat-d.html
+
+PS C:\Users\JOLLY\git_branch> git log --oneline
+857e127 (HEAD -> master) this is feat-d
+b546abc (feat-c) added link tag
+81c745f added paragraph in feat c
+98c9a54 started working feat c
+3f86b1e (feat-b) added feature b html file
+98bea4a working on feat a
+
+PS C:\Users\JOLLY\git_branch> 
+
+push the code into git repository:-
+PS C:\Users\JOLLY\git_branch> git remote add origin https://github.com/rakshushamin01/webdev-cohort-opensource.git
+PS C:\Users\JOLLY\git_branch> git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+PS C:\Users\JOLLY\git_branch> git push --set-upstream origin master 
+info: please complete authentication in your browser...
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (18/18), done.
+Writing objects: 100% (19/19), 2.87 KiB | 267.00 KiB/s, done.
+Total 19 (delta 8), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (8/8), done.
+To https://github.com/rakshushamin01/webdev-cohort-opensource.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
 PS C:\Users\JOLLY\git_branch> 
